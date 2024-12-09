@@ -61,15 +61,18 @@ boto3==1.28.2
 ### Como executar o projeto 
 
 #### Fazer Upload de Arquivo para o S3
-```echo "Este é um arquivo de teste para acionar a função Lambda." > cloud-texte.txt
+
+echo "Este é um arquivo de teste para acionar a função Lambda." > cloud-texte.txt
+
 aws s3 cp cloud-texte.txt s3://bucket-contador-1/
-```
+
 #### Publicar Mensagem no SNS
-``` aws sns publish --topic-arn arn:aws:sns:us-east-1:YOUR-ACCOUNT-ID:MySNSTopic --message "Teste de publicação no tópico SNS"
-```
+
+aws sns publish --topic-arn arn:aws:sns:us-east-1:YOUR-ACCOUNT-ID:MySNSTopic --message "Teste de publicação no tópico SNS"
+
 #### Enviar Mensagem para a Fila SQS
-``` aws sqs send-message --queue-url https://sqs.us-east-1.amazonaws.com/YOUR-ACCOUNT-ID/fila-contador-1 --message-body "Teste de mensagem SQS"
- ```
+
+aws sqs send-message --queue-url https://sqs.us-east-1.amazonaws.com/YOUR-ACCOUNT-ID/fila-contador-1 --message-body "Teste de mensagem SQS"
 
 
 ### Requisitos de Instalação
@@ -77,31 +80,34 @@ aws s3 cp cloud-texte.txt s3://bucket-contador-1/
  1 Instalações necessárias 
 
 #### Atualizar repositórios
-```sudo apt update
-```
+sudo apt update
+
 
 #### Instalar Python e pip
-```sudo apt install python3 python3-pip python3-venv
-```
+sudo apt install python3 python3-pip python3-venv
+
 
 #### Instalar AWS CLI
-```curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-``` 
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
 unzip awscliv2.zip
 
 sudo ./aws/install
 
 
 #### Verificar instalações
-```python3 --version
-```
+
+python3 --version
+
 pip3 --version
 
 aws --version
 
+
 #### Ative o ambiente no Linux
-```source venv/bin/activate
-```
+
+source venv/bin/activate
+
 
 
 2 Configurar credenciais AWS:
@@ -115,22 +121,25 @@ aws configure
 
 3 Estrutura do Projeto:
 #### Exemplo de diretorios
-```mkdir -p devops-file-processor/src
-```
+
+mkdir -p devops-file-processor/src
+
 mkdir -p devops-file-processor/scripts
 
 cd devops-file-processor
 
 
 4 Criar ambiente virtual
-~~~python
+
 python3 -m venv venv
+
 source venv/bin/activate
-~~~
+
 
 5 Instalar bibliotecas
-```pip install boto3 psycopg2-binary
-```
+
+pip install boto3 psycopg2-binary
+
 
 6 Desenvolvimento do Script 
 -gerador de arquivo
