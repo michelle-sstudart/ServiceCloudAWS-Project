@@ -77,23 +77,31 @@ aws s3 cp cloud-texte.txt s3://bucket-contador-1/
  1 Instalações necessárias 
 
 #### Atualizar repositórios
-sudo apt update
+```sudo apt update
+```
 
 #### Instalar Python e pip
-sudo apt install python3 python3-pip python3-venv
+```sudo apt install python3 python3-pip python3-venv
+```
 
 #### Instalar AWS CLI
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+```curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+``` 
 unzip awscliv2.zip
+
 sudo ./aws/install
 
+
 #### Verificar instalações
-python3 --version
+```python3 --version
+```
 pip3 --version
+
 aws --version
 
 #### Ative o ambiente no Linux
-source venv/bin/activate
+```source venv/bin/activate
+```
 
 
 2 Configurar credenciais AWS:
@@ -107,8 +115,10 @@ aws configure
 
 3 Estrutura do Projeto:
 #### Exemplo de diretorios
-mkdir -p devops-file-processor/src
+```mkdir -p devops-file-processor/src
+```
 mkdir -p devops-file-processor/scripts
+
 cd devops-file-processor
 
 
@@ -119,14 +129,14 @@ source venv/bin/activate
 ~~~
 
 5 Instalar bibliotecas
-pip install boto3 psycopg2-binary 
-
+```pip install boto3 psycopg2-binary
+```
 
 6 Desenvolvimento do Script 
-gerador de arquivo
-upload para S3
-processador Lambda com Boto3
-criação de recursos AWS com Boto3
+-gerador de arquivo
+-upload para S3
+-processador Lambda com Boto3
+-criação de recursos AWS com Boto3
 
 
 
