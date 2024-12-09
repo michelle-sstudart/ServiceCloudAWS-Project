@@ -1,0 +1,11 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": "sqs:ReceiveMessage",
+        "Resource": "arn:aws:sqs:us-east-1:601931402457:fila-contador-1"
+      }
+    ]
+  }
+  
