@@ -1,7 +1,5 @@
 import boto3
 
-import boto3
-
 def associar_sns_sqs(topic_arn, queue_arn):
     sns = boto3.client('sns')
     try:
