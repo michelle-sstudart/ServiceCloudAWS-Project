@@ -54,21 +54,34 @@ Este projeto visa automatizar o processamento de arquivos carregados em um bucke
 
 ### Arquivo `requirements.txt`
 
-```plaintext
-boto3==1.28.2
-```
+`plaintext
+`boto3==1.28.´
+
 
 ### Como executar o projeto 
 
 #### Fazer Upload de Arquivo para o S3
 
-echo "Este é um arquivo de teste para acionar a função Lambda." > cloud-texte.txt
+echo "Este é um arquivo de teste para acionar a função Lambda." > cloud-teste.txt
 
-aws s3 cp cloud-texte.txt s3://bucket-contador-1/
+aws s3 cp cloud-teste.txt s3://bucket-contador-1/
 
 #### Publicar Mensagem no SNS
 
 aws sns publish --topic-arn arn:aws:sns:us-east-1:YOUR-ACCOUNT-ID:MySNSTopic --message "Teste de publicação no tópico SNS"
+
+
+#### Configuração do AWS SNS com Aviso de Recebimento por Email
+
+Para configurar o AWS SNS e garantir que o email com aviso de recebimento está funcionando corretamente, siga os passos abaixo:
+
+1. **Ativar a Assinatura**:
+   Use o comando abaixo para assinar o tópico SNS:
+   ```bash``
+   ``aws sns subscribe --topic-arn arn:aws:sns:us-east-1:601931402457:topico-contador-1 --protocol email --notification-endpoint e-mail@gmail.com
+   ```
+   
+
 
 #### Enviar Mensagem para a Fila SQS
 
@@ -80,33 +93,30 @@ aws sqs send-message --queue-url https://sqs.us-east-1.amazonaws.com/YOUR-ACCOUN
  1 Instalações necessárias 
 
 #### Atualizar repositórios
-sudo apt update
+``sudo apt update`
 
 
 #### Instalar Python e pip
-sudo apt install python3 python3-pip python3-venv
+``sudo apt install python3 python3-pip python3-venv`
 
 
 #### Instalar AWS CLI
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-
+```curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
-
 sudo ./aws/install
+```
 
 
 #### Verificar instalações
 
-python3 --version
-
-pip3 --version
-
-aws --version
-
+``python3 --version
+ pip3 --version
+ aws --version
+ `
 
 #### Ative o ambiente no Linux
 
-source venv/bin/activate
+``source venv/bin/activate`
 
 
 
@@ -122,23 +132,20 @@ aws configure
 3 Estrutura do Projeto:
 #### Exemplo de diretorios
 
-mkdir -p devops-file-processor/src
-
+`mkdir -p devops-file-processor/src``
 mkdir -p devops-file-processor/scripts
-
-cd devops-file-processor
-
+cd devops-file-processor```
 
 4 Criar ambiente virtual
 
-python3 -m venv venv
+`python3 -m venv venv``
 
-source venv/bin/activate
+`source venv/bin/activate``
 
 
 5 Instalar bibliotecas
 
-pip install boto3 psycopg2-binary
+`pip install boto3 psycopg2-binary``
 
 
 6 Desenvolvimento do Script 
