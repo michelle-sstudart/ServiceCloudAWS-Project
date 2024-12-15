@@ -87,40 +87,39 @@ Para configurar o AWS SNS e garantir que o email com aviso de recebimento está 
 aws sqs send-message --queue-url https://sqs.us-east-1.amazonaws.com/YOUR-ACCOUNT-ID/fila-contador-1 --message-body "Teste de mensagem SQS"
 
 
-### Requisitos de Instalação
+
+## Requisitos de Instalação
 
  1 Instalações necessárias 
 
 #### Atualizar repositórios
-sudo apt update
+'sudo apt update'
 
 
 #### Instalar Python e pip
-sudo apt install python3 python3-pip python3-venv
+'sudo apt install python3 python3-pip python3-venv'
 
 
 #### Instalar AWS CLI
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
+'curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"'
+'unzip awscliv2.zip'
+'sudo ./aws/install'
 
 
 
 #### Verificar instalações
-
-python3 --version
- pip3 --version
- aws --version
+'python3 --version'
+ 'pip3 --version'
+ 'aws --version'
  
 
 #### Ative o ambiente no Linux
-
-source venv/bin/activate
-
+'source venv/bin/activate'
 
 
-2 Configurar credenciais AWS:
-aws configure
+#### 2 Configurar credenciais AWS:
+'aws configure'
+
 #### Inserir:
 #### AWS Access Key ID
 #### AWS Secret Access Key
@@ -128,26 +127,27 @@ aws configure
 #### Formato de saída (json)
 
 
-3 Estrutura do Projeto:
-#### Exemplo de diretorios
+#### 3 Estrutura do Projeto:
+Exemplo de diretorios
 
-mkdir -p devops-file-processor/src
-mkdir -p devops-file-processor/scripts
-cd devops-file-processor
+'mkdir -p devops-file-processor/src'
 
-4 Criar ambiente virtual
+'mkdir -p devops-file-processor/scripts'
 
-python3 -m venv venv
-
-source venv/bin/activate
+'cd devops-file-processor'
 
 
-5 Instalar bibliotecas
+#### 4 Criar ambiente virtual
+'python3 -m venv venv'
 
-pip install boto3 psycopg2-binary
+'source venv/bin/activate'
 
 
-6 Desenvolvimento do Script 
+#### 5 Instalar bibliotecas
+'pip install boto3 psycopg2-binary'
+
+
+#### 6 Desenvolvimento do Script 
 -gerador de arquivo
 -upload para S3
 -processador Lambda com Boto3
@@ -155,9 +155,16 @@ pip install boto3 psycopg2-binary
 
 
 
-#### Este projeto está licenciado sob a MIT License - veja o arquivo LICENSE para mais detalhes.
+### Este projeto está licenciado sob a MIT License - veja o arquivo LICENSE para mais detalhes.
 
-Este `README.md` cobre os principais pontos do seu projeto, descreve o fluxo de trabalho, os componentes implementados, os pontos críticos, o monitoramento e como executar o projeto.
+
+### Este `README.md` cobre os principais pontos do projeto;
+
+- descreve o fluxo de trabalho, 
+- os componentes implementados, 
+- os pontos críticos, 
+- o monitoramento e,
+- como executar o projeto.
 
 
 
